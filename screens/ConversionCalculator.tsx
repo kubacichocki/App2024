@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
 import Input from "../components/input"
+import { ENV_IP } from '@env';
 
 const MetricsCalculatorScreen: React.FC = () => {
   const [result, setResult] = useState<string>("");
@@ -15,7 +16,7 @@ const MetricsCalculatorScreen: React.FC = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:8080/convert', {
+      const response = await fetch(`${ENV_IP}/convert`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
