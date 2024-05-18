@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
+import Input from "../components/input"
 
 const MetricsCalculatorScreen: React.FC = () => {
   const [result, setResult] = useState<string>("");
@@ -37,11 +38,12 @@ const MetricsCalculatorScreen: React.FC = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>Value:</Text>
-      <TextInput
-        style={styles.input}
-        keyboardType="numeric"
+      <Input 
+        title={""}
+        placeholder={"Enter value"}
         onChangeText={(text) => setValue(text)}
-        value={value}
+        secureTextEntry = {false}
+        // style={{width:300}}
       />
       <Button title="Convert to Pounds" onPress={() => convert('kgToPounds')} />
       <Button title="Convert to Kilograms" onPress={() => convert('poundsToKg')} />
