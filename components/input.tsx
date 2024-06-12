@@ -10,14 +10,14 @@ interface InputProps {
     error?: string;
 }
 
-const Input: React.FC<InputProps> = (props) => {
-    const {title, onChangeText, placeholder, style, secureTextEntry, error} = props;
+const Input: React.FunctionComponent<InputProps> = (props) => {
+    const { title, onChangeText, placeholder, style, secureTextEntry, error } = props;
 
     return (
         <View style={style}>
             {title ? <Text style={styles.title}>{title}</Text> : null}
             <TextInput
-                style = {styles.input}
+                style={styles.input}
                 onChangeText={onChangeText}
                 secureTextEntry={secureTextEntry}
                 placeholder={placeholder}
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 15,
         borderRadius: 10,
         borderColor: '#333333',
-        shadowColor: '#000000', 
+        shadowColor: '#000000',
         shadowOffset: {
             width: 0,
             height: 3,
@@ -49,18 +49,11 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     error: {
-
         color: '#ac0003',
     },
 
 });
 
-//Input default properties
-Input.defaultProps = {
-    title: 'Title',
-    placeholder: 'Placeholder...',
-    secureTextEntry: false,
-    style: {width: 200},
-};
+
 
 export default Input;

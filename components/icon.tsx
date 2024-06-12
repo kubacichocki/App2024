@@ -27,8 +27,8 @@ const styles = StyleSheet.create<Styles>({
         alignItems: 'center',
     },
     img: {
-        width: 290,
-        height: 80,
+        width: 500,
+        height: 500,
         marginBottom: 20,
     },
     txt: {
